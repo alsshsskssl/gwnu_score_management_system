@@ -25,6 +25,13 @@ class MyTest(TestCase):
             rank.append(r)
 
         fp.close()
+        with io.open("result.csv","w",encoding = "utf-8") as fw:
+            for i in range(len(raw_value)):
+                fw.write(raw_value[i].replace('\n','')+',')
+                fw.write(sum[i].__str__()+',')
+                fw.write(avg[i].__str__()+',')
+                fw.write(rank[i].__str__()+'\n')
+        self.asserEqual(1,2)    #unittest
 
 if(__name__=="__main__"):
     unittest.main()
