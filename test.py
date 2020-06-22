@@ -16,6 +16,15 @@ class MyTest(TestCase):
             sum.append(int(std[2])+int(std[3])+int(std[4]))
             avg.append(round(sum[i]/3,3))   #평균
 
+        rank = list()
+        for value in sum:
+            r=1
+            for value2 in sum:
+                if value < value2:
+                    r += 1
+            rank.append(r)
+
+        fp.close()
 
 if(__name__=="__main__"):
     unittest.main()
